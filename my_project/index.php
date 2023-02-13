@@ -13,7 +13,7 @@ else
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>PHP Application - AWS Elastic Beanstalk</title>
+    <title>My PHP Application</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster+Two" type="text/css">
     <link rel="icon" href="https://awsmedia.s3.amazonaws.com/favicon.ico" type="image/ico" >
@@ -23,25 +23,25 @@ else
 </head>
 <body>
     <section class="congratulations">
-        <h1>Congratulations!!! <br>The project was successfully deployed</h1>
+        <h1>Congratulations!!! <br>The project was successfully deployed <br><br> created by Ivan Mospan</h1>
 
     </section>
 
     <section class="instructions">
-        <h2>What was done? test commit</h2>
+        <h2>What was done?</h2>
         <ul>
-            <li>A virtual machine was deployed to AWS using terraform</li>
-            <li>An ansible playbook has been created with roles that will install and configure jenkins and plugins</li>
-            <li>A jenkins file that manages the Multibranch pipeline script has been created and uploaded to Github</li>
+            <li>A virtual machines were deployed on AWS by Terraform</li>
+            <li>An ansible playbook has been created with roles to install and configure Jenkins and plugins</li>
+            <li>A Jenkins file that manages the Multibranch pipeline script has been created and uploaded to Github</li>
             <li>A Jenkins project has been created in which the trigger for changes in the git repository is specified</li>
-            <li>Telegram notifications are configured for successful project execution</li>
+            <li>Telegram notifications were configured</li>
         </ul>
 
         <h2>In addition:</h2>
         <ul>
             <li>An application has been created on Elastic Beanstalk</li>
-            <li>A jenkins project is set up that deploys the code to Elastic Beanstalk after it is successfully tested. The successful execution of the previous project is set as a trigger.</li>
-            <li>Telegram notifications are configured for successful project deployed</li>
+            <li>A jenkins project is set up to deploy the code to Elastic Beanstalk after it was tested. The successful execution of the previous step was set as a trigger</li>
+            <li>Telegram notifications were configured for successful project deployment</li>
         </ul>
     </section>
 
