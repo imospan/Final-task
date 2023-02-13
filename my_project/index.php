@@ -23,7 +23,7 @@ else
 </head>
 <body>
     <section class="congratulations">
-        <h1>Congratulations!!! <br>The project was successfully deployed <br><br> created by Ivan Mospan</h1>
+        <h1>Congratulations!!! <br>The project was <br> successfully deployed <br><br><br> created by Ivan Mospan</h1>
 
     </section>
 
@@ -31,16 +31,16 @@ else
         <h2>What was done?</h2>
         <ul>
             <li>A virtual machines were deployed on AWS by Terraform</li>
-            <li>An ansible playbook has been created with roles to install and configure Jenkins and plugins</li>
+            <li>An Ansible playbook has been created with roles to install and configure Jenkins and plugins</li>
             <li>A Jenkins file that manages the Multibranch pipeline script has been created and uploaded to Github</li>
-            <li>A Jenkins project has been created in which the trigger for changes in the git repository is specified</li>
+            <li>A Jenkins project has been created with the trigger specified for changes in the git repository</li>
             <li>Telegram notifications were configured</li>
         </ul>
 
         <h2>In addition:</h2>
         <ul>
             <li>An application has been created on Elastic Beanstalk</li>
-            <li>A jenkins project is set up to deploy the code to Elastic Beanstalk after it was tested. The successful execution of the previous step was set as a trigger</li>
+            <li>A Jenkins project is set up to deploy the code to Elastic Beanstalk after it was tested</li>
             <li>Telegram notifications were configured for successful project deployment</li>
         </ul>
     </section>
