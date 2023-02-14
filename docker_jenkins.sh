@@ -4,7 +4,6 @@
 password=`date |md5sum |cut -c '1-12'`
 sleep 1
 
-
 # update existing list of packages
 sudo apt update -y
 
@@ -40,4 +39,12 @@ sudo docker build -t jenkins:jnks .
 sudo docker run --name jenkins -v jenkins-data:/var/jenkis_home -itd -p 8080:8080 --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=$password jenkins:jnks 
 
 # Save generated Jenkins admin pass to log file.
-echo "Jenkins admin password: " $password >> jenkins_password.txt
+cd /home/ubuntu/
+echo "Jenkins admin password: " $password >> pass.txt
+
+# install Ansible
+sudo apt install ansible unzip -y
+
+# fetch pre-configured Ansible files
+wget https://github.com/imospan/Final-task/raw/main/config/ansible.zip
+unzip ansible.zip
