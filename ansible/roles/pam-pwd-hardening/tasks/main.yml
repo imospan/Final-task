@@ -1,0 +1,13 @@
+---
+# task file to harden users' passwords
+- name: Install PAM library
+  apt:
+    name: libpam-cracklib
+    state: present
+    update_cache: yes
+
+- name: PAM configuration
+  ansible.builtin.lineinfile:
+      path: /etc/pam.d/common-password
+      regexp: 'pam_cracklib.so'
+      line: 'password  requisite pam_cracklib.so  retry=4 minlen=8 difok=3 reject_username enforce_for_root'
