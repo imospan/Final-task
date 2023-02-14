@@ -1,6 +1,6 @@
 This is a repository for the final project of EPAM Cloud&Devops Essentials course
 =============
-Brief annotation:
+Brief overview:
 ---------------------------------------
 In this project I am deploying a PHP application on [AWS EC2 instances](https://aws.amazon.com/ec2/).\
 Infrastracture is provisioned by [Terraform](https://www.terraform.io/).\
