@@ -1,0 +1,15 @@
+---
+# task file to install apache with its libs
+- name: Install apache and php
+  apt:
+    pkg:
+      - apache2
+      - php
+      - libapache2-mod-php
+    state: latest
+    update_cache: true
+
+- name: Start apache2 service
+  service:
+    name: apache2
+    state: started
