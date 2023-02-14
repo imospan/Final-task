@@ -1,0 +1,7 @@
+# tasks file for distro_version
+---
+ - name: Fetch Linux distro name and version
+   debug:
+    msg:
+    - "Hostname: {{ ansible_hostname }}"
+    - "Linux distibutive name and version: {{ ansible_distribution }}/{{ ansible_distribution_version }}"
