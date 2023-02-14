@@ -22,7 +22,7 @@ sudo chmod 666 /etc/default/jenkins
 sudo echo 'JAVA_ARGS="-Djenkins.install.runSetupWizard=false"' >> /etc/default/jenkins
 sudo chmod 644 /etc/default/jenkins
 
-# add user 'admin' with password 'admin'
+# add user 'mosya' with password 'admin'
 sudo -u jenkins mkdir /var/lib/jenkins/init.groovy.d
 sudo -u jenkins touch /var/lib/jenkins/init.groovy.d/basic-security.groovy
 sudo chmod 666 /var/lib/jenkins/init.groovy.d/basic-security.groovy
