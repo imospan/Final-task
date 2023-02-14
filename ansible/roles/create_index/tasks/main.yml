@@ -1,0 +1,12 @@
+---
+# Task file for creating test page, change Apache defaults from html to php and restart it
+- name: Creating index.php
+  shell: echo 'Hello world' > /var/www/html/index.php
+
+- name: Changing default page from index.html to index.php
+  shell: echo 'DirectoryIndex index.php' > /etc/apache2/mods-enabled/dir.conf
+
+- name: restart apache2
+  service:
+    name: apache2
+    state: restarted
