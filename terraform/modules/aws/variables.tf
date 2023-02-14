@@ -22,7 +22,7 @@ variable "tags" {
 
 variable "aws_instance_user_data" {
   description = "script to install Jenkins in Docker container"
-  default     = "jenkins_docker.sh"
+  default     = "docker_jenkins.sh"
 }
 
 variable "aws_instance_key_name" {
