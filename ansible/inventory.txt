@@ -1,0 +1,9 @@
+[feature]
+feature ansible_host=54.88.19.28
+
+[main]
+main ansible_host=35.174.176.65
+
+[web:children]
+feature
+main

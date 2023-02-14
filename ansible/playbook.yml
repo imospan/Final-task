@@ -1,0 +1,11 @@
+---
+# This playbook installs apache2 and hardens user password security
+- name:  Web servers configuration
+  hosts: web
+  become: yes
+  roles:
+    - distro_version
+    - install_apache2
+    - ufw_allow_port
+    - create_index
+    - pam-pwd-hardening
