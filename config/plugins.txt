@@ -9,7 +9,7 @@ publish-over-ssh:latest
 multibranch-scan-webhook-trigger:latest
 telegram-notifications:latest
 docker-plugin:latest
-docker-pipeline:latest
+docker-workflow:latest
 antisamy-markup-formatter:latest
 authorize-project:latest
 build-timeout:latest
