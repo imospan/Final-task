@@ -1,0 +1,7 @@
+---
+# Task file to open 80 port on a firewall
+- name: "UFW - Allow HTTP on port 80"
+  ufw:
+    rule: allow
+    port: '80'
+    proto: tcp
