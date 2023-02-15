@@ -40,8 +40,17 @@ All instances are deployed with Ubuntu 20.04, auto-generated SSH-key, Security g
 Pay attention to the `Outputs` and you will see the IP of your instances and ssh connection string to *Jenkins_server* via VS Code terminal like on the example below:\
 ![Знімок екрана_20230215_115956](https://user-images.githubusercontent.com/106439773/218996505-35e5c401-afed-4484-84a3-4a41d84c2135.png)
 
-*Note: alternatively, you can install Jenkins directly to host OS (without Docker) by a [bash script](https://github.com/imospan/Final-task/blob/main/jenkins_install.sh).*\
-[Boot script](https://github.com/imospan/Final-task/blob/main/docker_jenkins.sh) attached to *Jenkins_server* installs Jenkins in a Docker container. Dockerfile, plugins list and CasC-file are taken by script from [config](https://github.com/imospan/Final-task/tree/main/config) folder.
+Attached [boot script](https://github.com/imospan/Final-task/blob/main/docker_jenkins.sh) installs Jenkins in a Docker container. Dockerfile, plugins list and CasC-file are taken by script from [config](https://github.com/imospan/Final-task/tree/main/config) folder. Jenkins user is `admin` while password is randomly generated and can be seen by accesing its EC2 instance and typing command `cat pass.txt`.
+
+*Note: alternatively, you can install Jenkins directly to host OS (without Docker) by a [bash script](https://github.com/imospan/Final-task/blob/main/jenkins_install.sh).*
+
+My script also installs Ansible and fetches pre-cofigured [playbook and roles](https://github.com/imospan/Final-task/tree/main/ansible) from this repository and unzips them. You need only to upload your private key to `.ssh` folder, use `chmod 400` on it and update nodes' IP in `inventory.txt`. You can check the connection with `ansible all -m ping` command. After updating config, use these commands to play Ansible:
+```
+cd ansible
+ansible-playbook playbook.yml
+```
+The result of my playbook can be seen on a screen:\
+![Знімок екрана_20230215_125514](https://user-images.githubusercontent.com/106439773/219008613-5104e58b-40fc-4f81-af63-7970b23b8ad0.png)
 
 
 
