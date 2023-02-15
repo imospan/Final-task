@@ -28,7 +28,7 @@ else
     </section>
 
     <section class="instructions">
-        <h2>What was done?</h2>
+        <h2>What was done? test</h2>
         <ul>
             <li>A virtual machines were deployed on AWS by Terraform</li>
             <li>An Ansible playbook has been created with roles to install and configure Jenkins and plugins</li>
