@@ -7,9 +7,9 @@ Brief overview:
 - CI/CD process is managed with [Jenkins](https://www.jenkins.io/).
 - It is installed on a Jenkins-server-node in a [Docker container](https://www.docker.com/) by a boot script.
 - Two Web-server nodes are configured by [Ansible playbook](https://www.ansible.com/).
-- Added a webhook trigger for the Jenkins pipeline.
-- Created two branches in the repository.
-- Created a telegram bot to notify about completed jobs.
+- Added a [webhook trigger](https://plugins.jenkins.io/generic-webhook-trigger/) for the Jenkins pipeline.
+- Created two branches in the repository - `feature` and `main`.
+- Created a [telegram bot](https://plugins.jenkins.io/telegram-notifications/) to notify about completed jobs.
 - If the build form the main branch is succesfull, Jenkins uploads the project to [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/).
 ________________________
 To do:\
@@ -44,7 +44,9 @@ Attached [boot script](https://github.com/imospan/Final-task/blob/main/docker_je
 
 *Note: alternatively, you can install Jenkins directly to host OS (without Docker) by a [bash script](https://github.com/imospan/Final-task/blob/main/jenkins_install.sh).*
 
-My script also installs Ansible and fetches pre-cofigured [playbook and roles](https://github.com/imospan/Final-task/tree/main/ansible) from this repository and unzips them. You need only to upload your private key to `.ssh` folder, use `chmod 400` on it and update nodes' IP in `inventory.txt`. You can check the connection with `ansible all -m ping` command. After updating config, use these commands to play Ansible:
+Ansible configuration management
+-------------------------------
+I used Ansible for installing and configurind Apache2 web-server onto my nodes. My boot script also installs Ansible and fetches pre-cofigured [playbook and roles](https://github.com/imospan/Final-task/tree/main/ansible) from this repository to *Jenkins-server* EC2 and unzips them. You'll need only to upload your private key to `.ssh` folder, make it read-only using `chmod 400` on it and update nodes' IPs in `inventory.txt`. You can check the connection with `ansible all -m ping` command. After updating config, use these commands to play Ansible:
 ```
 cd ansible
 ansible-playbook playbook.yml
@@ -52,6 +54,11 @@ ansible-playbook playbook.yml
 The result of my playbook can be seen on a screen:\
 ![Знімок екрана_20230215_125514](https://user-images.githubusercontent.com/106439773/219008613-5104e58b-40fc-4f81-af63-7970b23b8ad0.png)
 
+*Note: alternatively, you can install Apache2 by a simple [bash script](https://github.com/imospan/Final-task/blob/feature/terraform/modules/aws/apache.sh).*
+
+Jenkins CI/CD management
+------------------------------
+![jenkins-is-the-way](https://user-images.githubusercontent.com/106439773/219455834-18037715-e568-4ec1-80e4-1ad6c6438f0b.png)
 
 
 
