@@ -1,37 +1,11 @@
-#!/usr/bin/env groovy
 pipeline {
-   agent any
-   options {
-      buildDiscarder(logRotator(numToKeepStr: '5')) 
-      timestamps()
-   }
-    
-   environment {
-      OWNER = 'mosya'
-   }
-    
-   stages {
-   
-      stage("Build") {
-          steps {
-            echo 'Jenkins makes a build'
-         }
-      }
-      
-      stage("Tests") {
-          steps {
-            echo 'Jenkins makes tests'
-         }
-      }
+    agent any
 
-      stage('Notification') {
-         when {
-            branch 'main'
-	   }
-         steps {
-            notifyEvents message: "Hello ${OWNER}, build and test were successful", token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
-            echo 'Jenkins sends notification to Telegram about successful job'
-         }
-      }  
-   }
+    stages {
+        stage('Deploy PHP to Feature') {
+            steps {
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'Feature-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/var/www/html/', remoteDirectorySDF: false, removePrefix: '/my_project/', sourceFiles: '/my_project/**.**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+            }
+        }
+    }
 }
