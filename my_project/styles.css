@@ -28,7 +28,7 @@ section.congratulations {
     background-image: -ms-linear-gradient(left, #9bd, #79b);
     background-image: -o-linear-gradient(left, #9bd, #79b);
     background-image: linear-gradient(left, #9bd, #79b);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#99bbdd', EndColorStr='#477eb5');
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#99bbdd', EndColorStr='#ffffff');
 }
 section.congratulations h1 {
     margin: 0 0 25px 0;
