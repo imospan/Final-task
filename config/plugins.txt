@@ -25,3 +25,4 @@ pipeline-github-lib:latest
 ssh-slaves:latest
 timestamper:latest
 ws-cleanup:latest
+awseb-deployment-plugin:latest
