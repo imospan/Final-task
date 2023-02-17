@@ -23,6 +23,7 @@ pipeline {
             steps {
               echo "<----------- Test started ----------->"
               sh '''
+              cd my_project
               result=`grep "Ivan" index.php | wc -l`
               echo $result
               if [ "$result" = "1" ]
