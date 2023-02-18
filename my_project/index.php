@@ -31,9 +31,10 @@ else
         <h2>What was done? test </h2>
         <ul>
             <li>A virtual machines were deployed on AWS by Terraform</li>
-            <li>An Ansible playbook has been created with roles to install and configure Jenkins and plugins</li>
+            <li>Jenkins was installed in a container with a Dockerfile obtained from Github</li>
+            <li>An Ansible playbook has been created with roles to install and configure Apache2 on web-servers</li>
             <li>A Jenkins file that manages the Multibranch pipeline script has been created and uploaded to Github</li>
-            <li>A Jenkins project has been created with the trigger specified for changes in the git repository</li>
+            <li>A Jenkins project has been created with the webhook trigger specified for changes in the git repository</li>
             <li>Telegram notifications were configured</li>
         </ul>
 
