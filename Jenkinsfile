@@ -9,6 +9,13 @@ pipeline {
     environment {
         TOKEN = credentials("BOT_TOKEN")
         CHAT_ID = credentials("CHAT_ID")
+        AWS_REGION = "us-east-1"
+        AWS_ACCESS_KEY_ID = credentials("ACCESS_KEY")
+        AWS_SECRET_ACCESS_KEY = credentials("SECRET_ACCES_KEY")
+        APPLICATION_NAME = "EPAM-Project"
+        ENVIRONMENT_NAME = "Epamproject-env"
+        VERSION_LABEL = "jenkins-${env.BUILD_NUMBER}"
+        
     }    
     
     stages {
@@ -40,6 +47,12 @@ pipeline {
         stage('Deploy to Main') {
             steps {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'Main-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/var/www/html/', remoteDirectorySDF: false, removePrefix: '/my_project/', sourceFiles: 'my_project/')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+            }
+        }    
+        stage('Deploy to AWS Elastic Beanstalk') {
+            steps {
+            sh "aws elasticbeanstalk create-application-version --application-name $APPLICATION_NAME --version-label $VERSION_LABEL --region $AWS_REGION --access-key-id $AWS_ACCESS_KEY_ID --secret-access-key $AWS_SECRET_ACCESS_KEY"
+            sh "aws elasticbeanstalk update-environment --environment-name $ENVIRONMENT_NAME --version-label $VERSION_LABEL --region $AWS_REGION --access-key-id $AWS_ACCESS_KEY_ID --secret-access-key $AWS_SECRET_ACCESS_KEY"
             }
         }
     }    
