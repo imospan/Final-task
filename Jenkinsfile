@@ -46,7 +46,7 @@ pipeline {
     post {
          success { 
             sh  ("""
-                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [OK](${BUILD_URL}consoleFull)'
+                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [Success](${BUILD_URL}consoleFull)'
             """)
          }
 
