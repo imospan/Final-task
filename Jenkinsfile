@@ -40,6 +40,7 @@ pipeline {
         stage('Deploy to Main') {
             steps {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'Main-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/var/www/html/', remoteDirectorySDF: false, removePrefix: '/my_project/', sourceFiles: 'my_project/')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                sh 'ssh -v'
             }
         }
     }    
