@@ -46,18 +46,18 @@ pipeline {
     post {
          success { 
             sh  ("""
-                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [OK](${BUILD_URL}consoleFull) \n *:sunglasses:*'
+                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [OK](${BUILD_URL}consoleFull)'
             """)
          }
 
          aborted {
             sh  ("""
-                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [Aborted](${BUILD_URL}consoleFull) \n *:confused:*'
+                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [Aborted](${BUILD_URL}consoleFull)'
             """)
          }
          failure {
             sh  ("""
-                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [Not OK](${BUILD_URL}consoleFull) \n *:disappointed_relieved:*'
+                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [Not OK](${BUILD_URL}consoleFull)'
             """)
          }
     }
