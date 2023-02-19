@@ -23,7 +23,7 @@ else
 </head>
 <body>
     <section class="congratulations">
-        <h1>Congratulations!!! <br>The project was <br> successfully deployed test <br><br> created by Ivan Mospan</h1>
+        <h1>Congratulations!!! <br>The project was <br> successfully deployed <br><br> created by Ivan Mospan</h1>
 
     </section>
 
