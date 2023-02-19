@@ -35,14 +35,13 @@ else
             <li>An Ansible playbook has been created with roles to install and configure Apache2 on web-servers</li>
             <li>A Jenkins file that manages the Multibranch pipeline script has been created and uploaded to Github</li>
             <li>A Jenkins project has been created with the webhook trigger specified for changes in the git repository</li>
-            <li>Telegram notifications were configured</li>
-        </ul>
+                    </ul>
 
         <h2>In addition:</h2>
         <ul>
+            <li>Telegram notifications were configured</li>
             <li>An application has been created on Elastic Beanstalk</li>
-            <li>A Jenkins project is set up to deploy the code to Elastic Beanstalk after it was tested</li>
-            <li>Telegram notifications were configured for successful project deployment</li>
+            <li>A Jenkins project is set up to deploy the code to Elastic Beanstalk by trigger</li>
         </ul>
     </section>
 
