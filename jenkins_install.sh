@@ -66,10 +66,11 @@ if [ -f "jenkins-cli.jar" ]; then
         "Publish-Over-SSH"
         "Multibranch-Scan-Webhook-Trigger"
         "Telegram-Notifications"
+        "awseb-deployment-plugin"
     )
 
     for plugin in ${PluginList[@]}; do
-        java -jar jenkins-cli.jar -auth admin:admin -s http://localhost:8080/ install-plugin $plugin
+        java -jar jenkins-cli.jar -auth mosya:admin -s http://localhost:8080/ install-plugin $plugin
 
     done
 fi

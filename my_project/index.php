@@ -13,7 +13,7 @@ else
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>My PHP Application</title>
+    <title>My PHP Application - feature branch</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster+Two" type="text/css">
     <link rel="icon" href="https://awsmedia.s3.amazonaws.com/favicon.ico" type="image/ico" >
@@ -30,19 +30,18 @@ else
     <section class="instructions">
         <h2>What was done?</h2>
         <ul>
-           <li>A virtual machines were deployed on AWS by Terraform</li>
+            <li>A virtual machines were deployed on AWS by Terraform</li>
             <li>Jenkins was installed in a container with a Dockerfile obtained from Github</li>
             <li>An Ansible playbook has been created with roles to install and configure Apache2 on web-servers</li>
             <li>A Jenkins file that manages the Multibranch pipeline script has been created and uploaded to Github</li>
             <li>A Jenkins project has been created with the webhook trigger specified for changes in the git repository</li>
-            <li>Telegram notifications were configured</li>
         </ul>
-
+                    
         <h2>In addition:</h2>
         <ul>
+            <li>Telegram notifications were configured</li>
             <li>An application has been created on Elastic Beanstalk</li>
-            <li>A Jenkins project is set up to deploy the code to Elastic Beanstalk after it was tested</li>
-            <li>Telegram notifications were configured for successful project deployment</li>
+            <li>A Jenkins project is set up to deploy the code to Elastic Beanstalk by trigger</li>
         </ul>
     </section>
 
