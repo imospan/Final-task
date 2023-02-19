@@ -80,10 +80,10 @@ Create a multibranch pipeline in Jenkins and configure it to scan Jenkinsfile an
 After that, your pipeline should automatically download the Jenkinsfile and configure branches and stages from it:
 ![Знімок екрана_20230218_163653](https://user-images.githubusercontent.com/106439773/219958706-3d130e10-a23b-4690-a93a-1141961a774f.png)
 
-That's how my pipeline looks after a few test runs with intentional erros:
+That's how my pipeline looks after a few test runs with intentional errors:
 ![Знімок екрана_20230218_103251](https://user-images.githubusercontent.com/106439773/219959345-97c5a4e6-bd2a-4b17-b796-33447ce97c1d.png)
 
-Screens with build notifications via Telegram:\
+Screens with build notifications via Telegram. Build status is clickable and leads to the Jenkins console.\
 ![Знімок екрана_20230218_102520](https://user-images.githubusercontent.com/106439773/219961014-4a011841-9138-4029-8ecd-32d4696db2a6.png)
 ![Знімок екрана_20230219_121935](https://user-images.githubusercontent.com/106439773/219961024-e07fbbef-3a02-44ef-a7f3-d5919d814475.png)
 
