@@ -58,10 +58,25 @@ The result of my playbook can be seen on a screen:\
 
 Jenkins CI/CD management
 ------------------------------
-![jenkins-is-the-way](https://user-images.githubusercontent.com/106439773/219455834-18037715-e568-4ec1-80e4-1ad6c6438f0b.png)
+<img align="left" src="https://user-images.githubusercontent.com/106439773/219455834-18037715-e568-4ec1-80e4-1ad6c6438f0b.png"></img>
+I've configured a Multibranch pipeline with a webhook trigger from Github. The pipeline itself is described in Declarative syntax in [Jenkinsfile](https://github.com/imospan/Final-task/blob/main/Jenkinsfile), uploaded to this repository. It consists of three stages - Build, Test, Deploy and post-build notification. The deployment is carried out on a specific web-server for each branch. After that, the message is sent to the Telegram chat with name of the branch, links to the repository and the Jenkins console output. If the build from `main` branch was successful, we can trigger a job to deploy our application to AWS Elastic Beanstalk with just a single click from this message :sunglasses:
+\
+\
+\
+\
+\
+\
+\
+\
+Here are some highlights for this setup.
+First of all, manage your credentials with Jenkins:
+![Знімок екрана_20230218_183354](https://user-images.githubusercontent.com/106439773/219955423-a4051e39-25f5-4ee2-9b56-33ef9ba80b0a.png)
 
+Then create an environment for AWS Elastic Beanstalk:
+![Знімок екрана_20230218_225147](https://user-images.githubusercontent.com/106439773/219955204-0045c349-c821-47d2-afa4-c56d9798621e.png)
 
-
+And don't forget to attach permissions policies to your `jenkins` user in *AWS IAM* console:
+![Знімок екрана_20230219_164042](https://user-images.githubusercontent.com/106439773/219955463-c158e328-91ae-4d1b-9d91-90c2248f6a89.png)
 
 
 
