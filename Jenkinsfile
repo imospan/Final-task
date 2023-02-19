@@ -8,14 +8,7 @@ pipeline {
     
     environment {
         TOKEN = credentials("BOT_TOKEN")
-        CHAT_ID = credentials("CHAT_ID")
-        AWS_REGION = "us-east-1"
-        AWS_ACCESS_KEY_ID = credentials("ACCESS_KEY")
-        AWS_SECRET_ACCESS_KEY = credentials("SECRET_ACCESS_KEY")
-        APPLICATION_NAME = "EPAM-Project"
-        ENVIRONMENT_NAME = "Epamproject-env"
-        VERSION_LABEL = "jenkins-${env.BUILD_NUMBER}"
-        
+        CHAT_ID = credentials("CHAT_ID")     
     }    
     
     stages {
