@@ -84,27 +84,9 @@ That's how my pipeline looks after a few test runs with intentional erros:
 ![Знімок екрана_20230218_103251](https://user-images.githubusercontent.com/106439773/219959345-97c5a4e6-bd2a-4b17-b796-33447ce97c1d.png)
 
 Screens with build notifications via Telegram:\
-<img align="right" src="https://user-images.githubusercontent.com/106439773/219959424-e2118de9-8c70-4fd4-8e85-6ab175a30734.png">
-<img align="left" src="https://user-images.githubusercontent.com/106439773/219959432-f903b71a-096f-4d2e-8ff9-5558ff3cf9bc.png"></img>
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
+![Знімок екрана_20230218_102520](https://user-images.githubusercontent.com/106439773/219961014-4a011841-9138-4029-8ecd-32d4696db2a6.png)
+![Знімок екрана_20230219_121935](https://user-images.githubusercontent.com/106439773/219961024-e07fbbef-3a02-44ef-a7f3-d5919d814475.png)
+
 As I have mentioned before, if you click on *Deploy to AWS Beanstalk* it will trigger a corresponding Jenkins job. The result will look like this:
 ![Знімок екрана_20230219_121910](https://user-images.githubusercontent.com/106439773/219959778-fa4ff9ce-ca2f-40b5-8938-af26f592f28e.png)
 
