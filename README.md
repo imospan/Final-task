@@ -42,7 +42,7 @@ Attached [boot script](https://github.com/imospan/Final-task/blob/main/docker_je
 
 Ansible configuration management
 -------------------------------
-I used Ansible for installing and configurind Apache2 web-server onto my nodes. My boot script also installs Ansible and fetches pre-cofigured [playbook and roles](https://github.com/imospan/Final-task/tree/main/ansible) from this repository to *Jenkins-server* EC2 and unzips them. You'll need only to upload your private key to `.ssh` folder, make it read-only using `chmod 400` on it and update nodes' IPs in `inventory.txt`. You can check the connection with `ansible all -m ping` command. After updating config, use these commands to play Ansible:
+I used Ansible for installing and configuring Apache2 web-server onto my nodes. My boot script also installs Ansible and fetches pre-cofigured [playbook and roles](https://github.com/imospan/Final-task/tree/main/ansible) from this repository to *Jenkins-server* EC2 and unzips them. You'll need only to upload your private key to `.ssh` folder, make it read-only using `chmod 400` on it and update nodes' IPs in `inventory.txt`. You can check the connection with `ansible all -m ping` command. After updating config, use these commands to play Ansible:
 ```
 cd ansible
 ansible-playbook playbook.yml
