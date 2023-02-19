@@ -49,17 +49,11 @@ pipeline {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'Main-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/var/www/html/', remoteDirectorySDF: false, removePrefix: '/my_project/', sourceFiles: 'my_project/')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }    
-        stage('Deploy to AWS Elastic Beanstalk') {
-            steps {
-            sh "aws elasticbeanstalk create-application-version --application-name $APPLICATION_NAME --version-label $VERSION_LABEL --region $AWS_REGION --access-key-id $AWS_ACCESS_KEY_ID --secret-access-key $AWS_SECRET_ACCESS_KEY"
-            sh "aws elasticbeanstalk update-environment --environment-name $ENVIRONMENT_NAME --version-label $VERSION_LABEL --region $AWS_REGION --access-key-id $AWS_ACCESS_KEY_ID --secret-access-key $AWS_SECRET_ACCESS_KEY"
-            }
-        }
     }    
     post {
          success { 
             sh  ("""
-                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [Success](${BUILD_URL}consoleFull)'
+                curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode=markdown -d text='*https://github.com/imospan/Final-task* \n *Job Name: My PHP application* \n *Branch*: $GIT_BRANCH \n *Build* : [Success](${BUILD_URL}consoleFull) \n \n [Deploy to AWS Beanstalk](http://54.90.5.17:8080/job/Deploy-AWS-Beanstalk-Job/build?token=beanstalktoken)'
             """)
          }
 
