@@ -1,0 +1,6 @@
+config/
+ansible/
+terraform/
+Jenkinsfile
+*.sh
+*.md
