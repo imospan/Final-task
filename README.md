@@ -12,10 +12,6 @@ Brief overview:
 - Created a [telegram bot](https://plugins.jenkins.io/telegram-notifications/) to notify about completed jobs.
 - If the build form the main branch is succesfull, Jenkins uploads the project to [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/).
 ________________________
-To do:\
-screens\
-telegram notification\
-elastic beanstalk auto-deployment
 
 Below I'll describe deployment process step by step.
 
@@ -77,6 +73,40 @@ Then create an environment for AWS Elastic Beanstalk:
 
 And don't forget to attach permissions policies to your `jenkins` user in *AWS IAM* console:
 ![Знімок екрана_20230219_164042](https://user-images.githubusercontent.com/106439773/219955463-c158e328-91ae-4d1b-9d91-90c2248f6a89.png)
+
+Create a multibranch pipeline in Jenkins and configure it to scan Jenkinsfile and the project itself from your reporistory. Then, add a webhook in Settings menu of your Github repository:
+![Знімок екрана_20230219_161033](https://user-images.githubusercontent.com/106439773/219958547-ed7a42ca-3d04-4adb-8e7b-26d47f908b93.png)
+
+After that, your pipeline should automatically download the Jenkinsfile and configure branches and stages from it:
+![Знімок екрана_20230218_163653](https://user-images.githubusercontent.com/106439773/219958706-3d130e10-a23b-4690-a93a-1141961a774f.png)
+
+That's how my pipeline looks after a few test runs with intentional erros:
+![Знімок екрана_20230218_103251](https://user-images.githubusercontent.com/106439773/219959345-97c5a4e6-bd2a-4b17-b796-33447ce97c1d.png)
+
+Screens with build notifications via Telegram:\
+<img align="right" src="https://user-images.githubusercontent.com/106439773/219959424-e2118de9-8c70-4fd4-8e85-6ab175a30734.png">
+<img align="left" src="https://user-images.githubusercontent.com/106439773/219959432-f903b71a-096f-4d2e-8ff9-5558ff3cf9bc.png"></img>
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+As I have mentioned before, if you click on *Deploy to AWS Beanstalk* it will trigger a corresponding Jenkins job. The result will look like this:
+![Знімок екрана_20230219_121910](https://user-images.githubusercontent.com/106439773/219959778-fa4ff9ce-ca2f-40b5-8938-af26f592f28e.png)
 
 
 
