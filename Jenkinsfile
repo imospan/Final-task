@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         TOKEN = credentials("BOT_TOKEN")
-        CHAT_ID = credentials("CHAT_ID")
+        CHAT_ID = credentials("CHAT_ID")     
     }    
     
     stages {
