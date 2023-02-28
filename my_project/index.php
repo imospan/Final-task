@@ -42,6 +42,7 @@ else
             <li>Telegram notifications were configured</li>
             <li>An application has been created on Elastic Beanstalk</li>
             <li>A Jenkins project is set up to deploy the code to Elastic Beanstalk by trigger</li>
+            <li> Created a presentation for the project </li>
         </ul>
     </section>
 
